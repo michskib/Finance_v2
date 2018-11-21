@@ -1,0 +1,28 @@
+﻿<Window x:Class="Finance_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Finance_v2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="675.5">
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="transactionDataGrid" Height="195" Margin="10,178,12,0" VerticalAlignment="Top"/>
+        <DataGrid Name="expenseDataGrid" HorizontalAlignment="Left" Height="120" Margin="454,37,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.743,0.028"/>
+        <DataGrid Name="incomeDataGrid" HorizontalAlignment="Left" Height="120" Margin="230,37,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.743,0.028"/>
+        <Button Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="579,386,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="482,386,0,0" VerticalAlignment="Top" Width="76" Height="20"/>
+        <Button x:Name="refreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="384,386,0,0" VerticalAlignment="Top" Width="76" Height="20"/>
+        <DatePicker x:Name="fromDatePicker" HorizontalAlignment="Left" Margin="55,37,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
+        <DatePicker x:Name="toDatePicker" HorizontalAlignment="Left" Margin="55,66,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
+        <TextBlock x:Name="fromTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="From" VerticalAlignment="Top" Margin="10,45,0,0" RenderTransformOrigin="0.424,-0.34" Height="16" Width="40"/>
+        <TextBlock x:Name="toTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="To" VerticalAlignment="Top" Margin="10,74,0,0" RenderTransformOrigin="0.424,-0.34" Height="16" Width="27"/>
+        <Button x:Name="manageCategoriesButton" Content="Manage categories..." HorizontalAlignment="Left" Margin="55,103,0,0" VerticalAlignment="Top" Width="147" Height="20"/>
+        <Button x:Name="addTransactionButton" Content="Add transaction..." HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top" Width="147" Height="20"/>
+
+    </Grid>
+</Window>
