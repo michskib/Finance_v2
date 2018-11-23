@@ -1,0 +1,17 @@
+﻿<Window x:Name="manageCategoriesWindow1" x:Class="Finance_v2.manageCategoriesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Finance_v2"
+        mc:Ignorable="d"
+        Title="Finance" Height="280.404" Width="375.254">
+    <Grid x:Name="manageCategoriesGrid">
+        <DataGrid x:Name="categoryDataGrid" HorizontalAlignment="Left" Height="221" Margin="10,10,0,0" VerticalAlignment="Top" Width="212"/>
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="227,47,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="addCategoryButton" Click="addCategoryButton_Click" Content="Add category..." HorizontalAlignment="Left" Margin="227,22,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="refreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="227,72,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="227,97,0,0" VerticalAlignment="Top" Width="128"/>
+
+    </Grid>
+</Window>

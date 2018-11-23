@@ -10,31 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Finance_v2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for manageCategoriesWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class manageCategoriesWindow : Window
     {
-
-        public MainWindow()
+        public manageCategoriesWindow()
         {
             InitializeComponent();
         }
 
-        private void manageCategoriesButton_Click(object sender, RoutedEventArgs e)
+        private void addCategoryButton_Click(object sender, RoutedEventArgs e)
         {
-            manageCategoriesWindow window = new manageCategoriesWindow();
-            window.ShowDialog();
-        }
-
-        private void addTransactionButton_Click(object sender, RoutedEventArgs e)
-        {
-            addTransactionWindow window = new addTransactionWindow();
+            addNewCategoryWindow window = new addNewCategoryWindow();
             window.ShowDialog();
         }
     }
