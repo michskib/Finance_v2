@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Finance_v2
 {
@@ -20,10 +22,14 @@ namespace Finance_v2
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void mainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            fill_transactionDataGrid();
         }
 
         private void manageCategoriesButton_Click(object sender, RoutedEventArgs e)
@@ -36,6 +42,24 @@ namespace Finance_v2
         {
             addTransactionWindow window = new addTransactionWindow();
             window.ShowDialog();
+        }
+
+        private void fill_transactionDataGrid()
+        {
+            balanceDatabaseOperationsClass balanceDatabaseOperations = new balanceDatabaseOperationsClass();
+            DataTable table = balanceDatabaseOperations.getTransactionTable();
+
+            transactionDataGrid.ItemsSource = table.DefaultView;
+        }
+
+        private void mainWindow_Activated(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
+        private void refresh()
+        {
+            fill_transactionDataGrid();
         }
     }
 }

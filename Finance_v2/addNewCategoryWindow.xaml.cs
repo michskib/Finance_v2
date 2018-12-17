@@ -23,5 +23,25 @@ namespace Finance_v2
         {
             InitializeComponent();
         }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                balanceDatabaseOperationsClass balanceDatabaseOperations = new balanceDatabaseOperationsClass();
+                balanceDatabaseOperations.addCategory(categoryNameTextbox.Text);
+                this.Close();
+            }
+            catch(ArgumentException exception)
+            {
+                MessageBox.Show("Category with this name already exists");
+                categoryNameTextbox.Text = "";
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+                categoryNameTextbox.Text = "";
+            }
+        }
     }
 }

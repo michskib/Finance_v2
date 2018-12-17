@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Finance_v2"
         mc:Ignorable="d"
-        Title="Finance" Height="280.404" Width="375.254">
+        Title="Finance" Height="280.404" Width="375.254" Loaded="manageCategoriesWindow1_Loaded" Activated="manageCategoriesWindow1_Activated">
     <Grid x:Name="manageCategoriesGrid">
-        <DataGrid x:Name="categoryDataGrid" HorizontalAlignment="Left" Height="221" Margin="10,10,0,0" VerticalAlignment="Top" Width="212"/>
-        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="227,47,0,0" VerticalAlignment="Top" Width="128"/>
+        <DataGrid x:Name="categoryDataGrid" IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" HorizontalAlignment="Left" Height="221" Margin="10,10,0,0" VerticalAlignment="Top" Width="212" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding CategoryName}" Width="200" Header="Category Name" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="227,47,0,0" VerticalAlignment="Top" Width="128" Click="deleteButton_Click"/>
         <Button x:Name="addCategoryButton" Click="addCategoryButton_Click" Content="Add category..." HorizontalAlignment="Left" Margin="227,22,0,0" VerticalAlignment="Top" Width="128"/>
-        <Button x:Name="refreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="227,72,0,0" VerticalAlignment="Top" Width="128"/>
-        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="227,97,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="refreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="227,72,0,0" VerticalAlignment="Top" Width="128" Click="refreshButton_Click"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="227,97,0,0" VerticalAlignment="Top" Width="128" Click="cancelButton_Click"/>
 
     </Grid>
 </Window>

@@ -110,6 +110,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BalanceDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalanceDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="balanceDatabaseOperationsClass.cs" />
+    <Compile Include="DataTableExt.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -140,6 +147,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BalanceDatabaseDataSet.xsc">
+      <DependentUpon>BalanceDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BalanceDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BalanceDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BalanceDatabaseDataSet.xss">
+      <DependentUpon>BalanceDatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Finance_v2_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

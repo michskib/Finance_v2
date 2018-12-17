@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Finance" Height="103.309" Width="285.955">
     <Grid>
-        <TextBox x:Name="enterCategoryNameButton" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
-        <Button x:Name="submitButton" Content="Submit" HorizontalAlignment="Left" Margin="193,33,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="categoryNameTextbox" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+        <Button x:Name="submitButton" Content="Submit" HorizontalAlignment="Left" Margin="193,33,0,0" VerticalAlignment="Top" Width="75" Click="submitButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Enter category name:" VerticalAlignment="Top"/>
 
     </Grid>

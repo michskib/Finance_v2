@@ -5,28 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Finance_v2"
         mc:Ignorable="d"
-        Title="Finance" Height="450" Width="675.5">
+        Title="Finance" Height="450" Width="675.5" Loaded="mainWindow_Loaded" Activated="mainWindow_Activated">
     <Grid x:Name="mainGrid" Margin="0,0,2,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="132*"/>
             <RowDefinition Height="287*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="314*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid Name="transactionDataGrid" Height="195" Margin="10,46,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <DataGrid Name="expenseDataGrid" HorizontalAlignment="Left" Height="120" Margin="441,37,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.743,0.028" Grid.RowSpan="2"/>
-        <DataGrid Name="incomeDataGrid" HorizontalAlignment="Left" Height="120" Margin="230,37,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.743,0.028" Grid.RowSpan="2"/>
-        <Button Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="566,254,0,0" VerticalAlignment="Top" Width="75" Height="20" Grid.Row="1"/>
-        <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="475,254,0,0" VerticalAlignment="Top" Width="76" Height="20" Grid.Row="1"/>
-        <Button x:Name="refreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="384,254.333,0,0" VerticalAlignment="Top" Width="76" Height="20" Grid.Row="1"/>
-        <DatePicker x:Name="fromDatePicker" HorizontalAlignment="Left" Margin="55,37,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
-        <DatePicker x:Name="toDatePicker" HorizontalAlignment="Left" Margin="55,66,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
-        <TextBlock x:Name="fromTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="From" VerticalAlignment="Top" Margin="10,45,0,0" RenderTransformOrigin="0.424,-0.34" Height="16" Width="40"/>
+        <DataGrid Name="transactionDataGrid" IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" Height="195" Margin="10,46,10,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" Width="624" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Date}" Width="75" Header="Date" />
+                <DataGridTextColumn Binding="{Binding CategoryId}" Width="100" Header="Category"/>
+                <DataGridTextColumn Binding="{Binding Description}" Width="400" Header="Description"/>
+                <DataGridTextColumn Binding="{Binding Value}" Width="41" Header="Value"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="expenseDataGrid" HorizontalAlignment="Left" Height="120" Margin="403,37,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.743,0.028" Grid.RowSpan="2" Grid.Column="1"/>
+        <DataGrid Name="incomeDataGrid" HorizontalAlignment="Left" Height="120" Margin="192,37,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.743,0.028" Grid.RowSpan="2" Grid.Column="1"/>
+        <Button Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="528,254,0,0" VerticalAlignment="Top" Width="75" Height="20" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="437,254,0,0" VerticalAlignment="Top" Width="76" Height="20" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="refreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="346,254,0,0" VerticalAlignment="Top" Width="76" Height="20" Grid.Row="1" Grid.Column="1"/>
+        <DatePicker x:Name="fromDatePicker" HorizontalAlignment="Left" Margin="17,37,0,0" VerticalAlignment="Top" Width="147" Height="24" Grid.Column="1"/>
+        <DatePicker x:Name="toDatePicker" HorizontalAlignment="Left" Margin="17,66,0,0" VerticalAlignment="Top" Width="147" Height="24" Grid.Column="1"/>
+        <TextBlock x:Name="fromTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="From" VerticalAlignment="Top" Margin="10,45,0,0" RenderTransformOrigin="0.424,-0.34" Height="16" Width="40" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="toTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="To" VerticalAlignment="Top" Margin="10,74,0,0" RenderTransformOrigin="0.424,-0.34" Height="16" Width="27"/>
-        <Button x:Name="manageCategoriesButton" Click="manageCategoriesButton_Click" Content="Manage categories..." HorizontalAlignment="Left" Margin="55,103,0,0" VerticalAlignment="Top" Width="147" Height="20"/>
-        <Button x:Name="addTransactionButton" Click="addTransactionButton_Click"  Content="Add transaction..." HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top" Width="147" Height="20" Grid.RowSpan="2"/>
+        <Button x:Name="manageCategoriesButton" Click="manageCategoriesButton_Click" Content="Manage categories..." HorizontalAlignment="Left" Margin="17,103,0,0" VerticalAlignment="Top" Width="147" Height="20" Grid.Column="1"/>
+        <Button x:Name="addTransactionButton" Click="addTransactionButton_Click"  Content="Add transaction..." HorizontalAlignment="Left" Margin="17,128,0,0" VerticalAlignment="Top" Width="147" Height="20" Grid.RowSpan="2" Grid.Column="1"/>
 
     </Grid>
 </Window>
